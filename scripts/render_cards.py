@@ -69,6 +69,10 @@ TILES = [
 ]
 # One card each, in this order. Names as on GitHub.
 FEATURED = ["alliance-tracker", "cms", "Ramadan-Planner"]
+# Cards to leave out, by name: "hero", "tile-websites" (tile-<slug>), "activity",
+# "repo-cms" (repo-<repo name>) or "graph". A hidden card isn't drawn and drops
+# out of the README. Take its name out to bring it back.
+HIDDEN = {"repo-alliance-tracker", "repo-cms"}
 # Optional. assets/portrait.(png|jpg|jpeg|webp) is drawn beside the name as a
 # field of square dots, bigger where the photo is lighter. Best on a dark backdrop.
 PORTRAIT = sorted(p for p in ROOT.glob("assets/portrait.*") if p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"})
@@ -733,11 +737,16 @@ def block(cards: dict[str, Card], links: dict[str, str]) -> str:
         tag = f'<img src="cards/{c.slug}.svg" width="{width}" alt="{html.escape(c.alt)}">'
         return f'<a href="{html.escape(links[c.slug])}">{tag}</a>' if c.slug in links else tag
 
-    rows = [img(cards["hero"], "100%")]
-    rows.append("".join(img(c, f"{TILE_PCT}%") for slug, c in cards.items() if slug.startswith("tile-")))
-    rows.append(img(cards["activity"], "100%"))
-    rows += [img(c, "100%") for slug, c in cards.items() if slug.startswith("repo-")]
-    rows.append(img(cards["graph"], "100%"))
+    # `cards` is in page order; the tiles share one line, with no space between them.
+    rows: list[str] = []
+    for slug, c in cards.items():
+        if slug.startswith("tile-"):
+            if rows and rows[-1].startswith("<a") and "tile-" in rows[-1]:
+                rows[-1] += img(c, f"{TILE_PCT}%")
+            else:
+                rows.append(img(c, f"{TILE_PCT}%"))
+        else:
+            rows.append(img(c, "100%"))
     return ("<!-- cards:start: written by scripts/render_cards.py. Edit the script, not this block. -->\n"
             '<p align="center">\n' + "\n".join(rows) + "\n</p>\n<!-- cards:end -->")
 
@@ -774,11 +783,20 @@ def main() -> None:
     contrib = json.loads((ROOT / "data" / "contributions.json").read_text(encoding="utf-8"))
     repos = json.loads((ROOT / "data" / "repos.json").read_text(encoding="utf-8"))
     s = Stats(contrib, repos)
+    hidden = {h.lower() for h in HIDDEN}
+    known = {"hero", "activity", "graph"} | {f"tile-{t['slug']}" for t in TILES} | {f"repo-{r.lower()}" for r in FEATURED}
+    for name in sorted(hidden - known):
+        print(f"warning: HIDDEN names {name!r}, which isn't a card", file=sys.stderr)
+    tiles = [t for t in TILES if f"tile-{t['slug']}" not in hidden]
+    featured = [r for r in FEATURED if f"repo-{r.lower()}" not in hidden]
     FONTS = Fonts()
     try:
-        made = [hero(s)] + [tile(t, i, s.repo_count) for i, t in enumerate(TILES)] + [activity(s)]
-        made += [c for i, name in enumerate(FEATURED) if (c := repo(s, name, i))]
-        made.append(graph(s))
+        # Visible cards only, so the delays still run straight down the page.
+        made = [hero(s)] if "hero" not in hidden else []
+        made += [tile(t, i, s.repo_count) for i, t in enumerate(tiles)]
+        made += [activity(s)] if "activity" not in hidden else []
+        made += [c for i, name in enumerate(featured) if (c := repo(s, name, i))]
+        made += [graph(s)] if "graph" not in hidden else []
         OUT.mkdir(parents=True, exist_ok=True)
         for c in made:
             (OUT / f"{c.slug}.svg").write_text(c.svg(), encoding="utf-8", newline="\n")
@@ -786,7 +804,7 @@ def main() -> None:
         FONTS.close()
 
     cards = {c.slug: c for c in made}
-    for old in OUT.glob("repo-*.svg"):  # A repo dropped from FEATURED loses its card.
+    for old in OUT.glob("*.svg"):  # A hidden or dropped card loses its file.
         if old.stem not in cards:
             old.unlink()
     links = {f"tile-{t['slug']}": t["href"] for t in TILES}
