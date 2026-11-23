@@ -1,0 +1,21 @@
+{
+ "login": "Jayqtpie",
+ "count": 15,
+ "repos": [
+  {"name": "alliance-tracker", "description": "Alliance tracker for Last War", "url": "https://github.com/Jayqtpie/alliance-tracker", "homepage": "https://alliance-tracker-nine.vercel.app", "language": "TypeScript", "stars": 0, "forks": 1, "pushed": "2026-11-18", "fork": false, "archived": false},
+  {"name": "cms", "description": "content studio", "url": "https://github.com/Jayqtpie/cms", "homepage": "", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-06-24", "fork": false, "archived": false},
+  {"name": "command-center", "description": "Command center for guidedbarakah", "url": "https://github.com/Jayqtpie/command-center", "homepage": "https://command-center-tan-delta.vercel.app", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-03-29", "fork": false, "archived": false},
+  {"name": "Dashboard", "description": "Dashboard tracker", "url": "https://github.com/Jayqtpie/Dashboard", "homepage": "https://dashboard-one-sable-14.vercel.app", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-03-10", "fork": false, "archived": false},
+  {"name": "fit-camp", "description": "fitness bootcamp", "url": "https://github.com/Jayqtpie/fit-camp", "homepage": "https://fit-camp-pi.vercel.app", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-06-21", "fork": false, "archived": false},
+  {"name": "fit-campv3", "description": "fitness bootcamp", "url": "https://github.com/Jayqtpie/fit-campv3", "homepage": "https://fit-campv3.vercel.app", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-06-30", "fork": false, "archived": false},
+  {"name": "fit-campv4", "description": "fitness bootcamp", "url": "https://github.com/Jayqtpie/fit-campv4", "homepage": "https://fit-campv4.vercel.app", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-06-10", "fork": false, "archived": false},
+  {"name": "halalhabitsv2", "description": "", "url": "https://github.com/Jayqtpie/halalhabitsv2", "homepage": "", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-04-06", "fork": false, "archived": false},
+  {"name": "JayClaw", "description": "Dashboard for JayClaw", "url": "https://github.com/Jayqtpie/JayClaw", "homepage": "https://jay-claw.vercel.app", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-02-24", "fork": false, "archived": false},
+  {"name": "jayqtpie", "description": "", "url": "https://github.com/Jayqtpie/jayqtpie", "homepage": "", "language": "", "stars": 0, "forks": 0, "pushed": "2026-11-23", "fork": false, "archived": false},
+  {"name": "playing-with-git", "description": "", "url": "https://github.com/Jayqtpie/playing-with-git", "homepage": "", "language": "", "stars": 0, "forks": 0, "pushed": "2026-07-20", "fork": false, "archived": false},
+  {"name": "productivity-dashboard", "description": "Web based productivity app to accompany the productivity ebook", "url": "https://github.com/Jayqtpie/productivity-dashboard", "homepage": "https://productivity-dashboard-ecru.vercel.app", "language": "JavaScript", "stars": 0, "forks": 0, "pushed": "2026-03-01", "fork": false, "archived": false},
+  {"name": "Ramadan-Planner", "description": "Web based Ramadan planner to accompany PDF", "url": "https://github.com/Jayqtpie/Ramadan-Planner", "homepage": "https://guidedbarakah.app", "language": "JavaScript", "stars": 0, "forks": 0, "pushed": "2026-02-27", "fork": false, "archived": false},
+  {"name": "ReelReverse", "description": "", "url": "https://github.com/Jayqtpie/ReelReverse", "homepage": "", "language": "Python", "stars": 0, "forks": 0, "pushed": "2026-03-05", "fork": false, "archived": false},
+  {"name": "spw", "description": "spw rebuild", "url": "https://github.com/Jayqtpie/spw", "homepage": "https://spw-peach.vercel.app", "language": "TypeScript", "stars": 0, "forks": 0, "pushed": "2026-04-30", "fork": false, "archived": false}
+ ]
+}

@@ -1,0 +1,5 @@
+# STATIC=1 output, for screenshots before pushing.
+preview/
+# Browser-check scratch files.
+.playwright-mcp/
+__pycache__/
