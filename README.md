@@ -2,9 +2,9 @@
 <p align="center">
 <img src="cards/hero.svg" width="100%" alt="Jay Purohit. I design websites and then build them myself, so the thing you approve is the thing that goes live.">
 <a href="https://jaypurohit.com"><img src="cards/tile-websites.svg" width="32.5%" alt="Websites. Designed and built in London."></a><a href="https://github.com/Jayqtpie?tab=repositories"><img src="cards/tile-code.svg" width="32.5%" alt="Code. 15 public repositories."></a><a href="mailto:hello@jaypurohit.com"><img src="cards/tile-contact.svg" width="32.5%" alt="Contact. hello@jaypurohit.com."></a>
-<img src="cards/activity.svg" width="100%" alt="1,760 contributions in the last year. Current streak 10 days, longest 13. 90 active days. Busiest day 30 Sep 2026, with 154.">
+<img src="cards/activity.svg" width="100%" alt="1,838 contributions in the last year. Current streak 12 days, longest 13. 92 active days. Busiest day 30 Sep 2026, with 154.">
 <a href="https://github.com/Jayqtpie/Ramadan-Planner"><img src="cards/repo-ramadan-planner.svg" width="100%" alt="Ramadan-Planner: Web based Ramadan planner to accompany PDF."></a>
-<img src="cards/graph.svg" width="100%" alt="Contribution graph: 1,760 contributions in the last year.">
+<img src="cards/graph.svg" width="100%" alt="Contribution graph: 1,838 contributions in the last year.">
 </p>
 <!-- cards:end -->
 
